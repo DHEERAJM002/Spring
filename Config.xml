@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!--  By default it is singleTon -->
+  <bean id="sobj1" class="com.edu.Student" scope="prototype" init-method="init" destroy-method="destroy">
+<!--   <constructor-arg name="sid" value="1"></constructor-arg> -->
+<!-- constructor is called first before init method -->
+   <property name="sid" value="1"></property>
+  <property name="sname" value="Dev"></property>
+   <property name="sage" value="22"></property>
+    <property name="addresses">
+    <list>
+    <value>Bengaluru</value>
+    <value>Channapatna</value>
+    <value>Mysuru</value>
+    </list>
+    </property>
+    <property name="Courses">
+    <set>
+    <value>AWS</value>
+    <value>JAVA</value>
+    <value>DBMS</value>
+    </set>
+    </property>
+    <property name="marks">
+    <map>
+    <entry key="Maths" value="98"></entry>
+    <entry key="Science" value="97"></entry>
+    <entry key="English" value="99"></entry>
+    </map>
+    </property>
+  </bean>
+</beans>
